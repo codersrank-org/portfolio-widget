@@ -1,0 +1,263 @@
+:host {
+  --preloader-color: #72a0a8;
+
+  --item-spacing: 2em;
+  --item-border-radius: 0px;
+  --item-border: none;
+  --item-padding: 0px;
+  --item-bg-color: 0px;
+  --grid-columns: 1;
+
+  --logo-size: 48px;
+  --logo-margin: 16px;
+
+  --title-font-size: 1.15em;
+  --title-font-weight: bold;
+  --title-text-color: inherit;
+  --title-opacity: 1;
+
+  --location-text-color: inherit;
+  --location-opacity: 0.55;
+  --location-font-size: inherit;
+  --location-font-weight: inherit;
+
+  --date-text-color: inherit;
+  --date-opacity: 0.55;
+  --date-font-size: inherit;
+  --date-font-weight: inherit;
+
+  --company-text-color: inherit;
+  --company-opacity: 0.55;
+  --company-font-size: inherit;
+  --company-font-weight: inherit;
+
+  --description-font-size: inherit;
+  --description-font-weight: inherit;
+  --description-text-color: inherit;
+  --description-opacity: 1;
+
+  --tag-border: none;
+  --tag-star-color: #ff9900;
+  --tag-bg-color: rgba(0, 0, 100, 0.075);
+  --tag-font-size: 0.85em;
+  --tag-font-weight: bold;
+  --tag-padding: 0.35em 0.57em;
+  --tag-margin: 0.28em;
+  --tag-border-radius: 4px;
+  --tag-text-color: inherit;
+
+  --link-margin: 0.28em;
+  --link-font-size: 0.85em;
+  --link-font-weight: 600;
+  --link-text-color: #72a0a8;
+  --link-opacity: 1;
+  --link-text-decoration: none;
+  --link-text-transform: uppercase;
+  --link-border: none;
+  --link-border-radius: 4px;
+  --link-bg-color: transparent;
+  --link-padding: 2px 4px;
+
+  --link-hover-bg-color: rgba(114, 160, 168, 0.15);
+  /*
+  --link-hover-text-color
+  --link-hover-opacity
+  --link-hover-text-decoration
+  --link-hover-border
+  --link-hover-bg-color
+
+  --link-active-text-color
+  --link-active-opacity
+  --link-active-text-decoration
+  --link-active-border
+  --link-active-bg-color
+  */
+
+  width: 100%;
+  display: block;
+  position: relative;
+}
+.codersrank-portfolio {
+  position: relative;
+  &-loading {
+    height: 100px;
+  }
+  &-preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    margin: -16px 0 0 -16px;
+    border: 3px solid var(--preloader-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: preloader 1s infinite linear;
+  }
+
+  ul,
+  &-item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li + li {
+    margin-top: var(--item-spacing);
+  }
+
+  &-grid {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(var(--grid-columns), 1fr);
+      column-gap: var(--item-spacing);
+      row-gap: var(--item-spacing);
+    }
+    li + li {
+      margin: 0;
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    border-radius: var(--item-border-radius);
+    border: var(--item-border);
+    padding: var(--item-padding);
+    background-color: var(--item-bg-color);
+  }
+  &-content {
+    min-width: 0;
+    width: 100%;
+    flex-shrink: 10;
+  }
+  &-logo {
+    width: var(--logo-size);
+    height: var(--logo-size);
+    margin-right: var(--logo-margin);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img,
+    svg {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    svg {
+      width: 100%;
+    }
+  }
+  &-title {
+    font-size: var(--title-font-size);
+    font-weight: var(--title-font-weight);
+    color: var(--title-text-color);
+    opacity: var(--title-opacity);
+  }
+  &-date {
+    font-size: var(--date-font-size);
+    font-weight: var(--date-font-weight);
+    color: var(--date-text-color);
+    opacity: var(--date-opacity);
+  }
+  &-company {
+    font-size: var(--company-font-size);
+    font-weight: var(--company-font-weight);
+    color: var(--company-text-color);
+    opacity: var(--company-opacity);
+  }
+  &-location {
+    font-size: var(--location-font-size);
+    font-weight: var(--location-font-weight);
+    color: var(--location-text-color);
+    opacity: var(--location-opacity);
+  }
+
+  &-description {
+    font-size: var(--description-font-size);
+    font-weight: var(--description-font-weight);
+    color: var(--description-text-color);
+    opacity: var(--description-opacity);
+  }
+
+  &-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 0.5em;
+  }
+  &-tag {
+    display: inline-flex;
+    padding: var(--tag-padding);
+    font-size: var(--tag-font-size);
+    background: var(--tag-bg-color);
+    border-radius: var(--tag-border-radius);
+    font-weight: var(--tag-font-weight);
+    line-height: 1;
+    margin-right: var(--tag-margin);
+    margin-bottom: var(--tag-margin);
+    border: var(--tag-border);
+    color: var(--tag-text-color);
+    &-star {
+      color: var(--tag-star-color);
+      margin-right: 4px;
+    }
+  }
+  &-links {
+    margin-top: 0.25em;
+    display: flex;
+    a {
+      font-size: var(--link-font-size);
+      font-weight: var(--link-font-weight);
+      color: var(--link-text-color);
+      opacity: var(--link-opacity);
+      text-decoration: var(--link-text-decoration);
+      text-transform: var(--link-text-transform);
+      border: var(--link-border);
+      border-radius: var(--link-border-radius);
+      background-color: var(--link-bg-color);
+      padding: var(--link-padding);
+    }
+    a + a {
+      margin-left: var(--link-margin);
+    }
+    a:hover {
+      color: var(--link-hover-text-color, var(--link-text-color));
+      opacity: var(--link-hover-opacity, var(--link-opacity));
+      text-decoration: var(--link-hover-text-decoration, var(--link-text-decoration));
+      border: var(--link-hover-border, var(--link-border));
+      background-color: var(--link-hover-bg-color, var(--link-bg-color));
+    }
+    a:active {
+      color: var(
+        --link-active-text-color,
+        var(--link-hover-text-color, var(--link-text-color))
+      );
+      opacity: var(--link-active-opacity, var(--link-hover-opacity, var(--link-opacity)));
+      text-decoration: var(
+        --link-active-text-decoration,
+        var(--link-hover-text-decoration, var(--link-text-decoration))
+      );
+      border: var(--link-active-border, var(--link-hover-border, var(--link-border)));
+      background-color: var(
+        --link-active-bg-color,
+        var(--link-hover-bg-color, var(--link-bg-color))
+      );
+    }
+  }
+}
+
+@keyframes preloader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

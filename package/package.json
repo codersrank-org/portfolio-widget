@@ -1,0 +1,28 @@
+{
+  "name": "@codersrank/portfolio",
+  "version": "0.9.4",
+  "description": "Codersrank Portfolio Widget",
+  "main": "cjs/codersrank-portfolio.js",
+  "module": "esm/codersrank-portfolio.js",
+  "jsnext:main": "esm/codersrank-portfolio.js",
+  "browser": "codersrank-portfolio.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codersrank-org/portfolio-widget.git"
+  },
+  "author": "CodersRank Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codersrank-org/portfolio-widget/issues"
+  },
+  "homepage": "https://github.com/codersrank-org/portfolio-widget#readme",
+  "keywords": [
+    "codersrank",
+    "work",
+    "experience",
+    "jobs",
+    "profile",
+    "cv",
+    "web component"
+  ]
+}
