@@ -26,13 +26,13 @@ const getContent = (attrs = {}) => {
         position: relative;
       }
       codersrank-portfolio {
-        width: 480px;
+        width: 800px;
       }
     </style>
   </head>
   <body>
     <codersrank-portfolio ${attrsString}></codersrank-portfolio>
-    <script src="https://unpkg.com/@codersrank/summary/codersrank-portfolio.min.js"></script>
+    <script src="https://unpkg.com/@codersrank/portfolio/codersrank-portfolio.min.js"></script>
   </body>
   </html>
   `;
@@ -46,7 +46,7 @@ const getScreenshot = async (attrs = {}) => {
   await page.setViewport({ width: 800, height: 600, deviceScaleFactor: 2 });
   await page.setContent(getContent(attrs), { waitUntil: 'networkidle0' });
   const widgetElement = await page.$('codersrank-portfolio');
-  const screenshotBuffer = await widgetElement.screenshot();
+  const screenshotBuffer = await widgetElement.screenshot({ omitBackground: true });
   await browser.close();
   return screenshotBuffer;
 };
