@@ -1,5 +1,7 @@
 # Codersrank Portfolio Widget
 
+<!-- DOCS_START -->
+
 Codersrank Portfolio Widget is a web component that allows you easily integrate portfolio information from your [CodersRank](https://codersrank.io) profile to your personal website:
 
 <img src="preview.png" />
