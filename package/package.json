@@ -1,6 +1,6 @@
 {
   "name": "@codersrank/portfolio",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Codersrank Portfolio Widget",
   "main": "cjs/codersrank-portfolio.js",
   "module": "esm/codersrank-portfolio.js",
@@ -18,7 +18,9 @@
   "homepage": "https://github.com/codersrank-org/portfolio-widget#readme",
   "keywords": [
     "codersrank",
-    "portfolio",
+    "work",
+    "experience",
+    "jobs",
     "profile",
     "cv",
     "web component"
