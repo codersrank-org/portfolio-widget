@@ -135,6 +135,14 @@ class CodersrankPortfolio extends HTMLElement {
     this.setAttribute('max-items', value);
   }
 
+  get branding() {
+    return this.getAttribute('branding') !== 'false';
+  }
+
+  set branding(value) {
+    this.setAttribute('branding', value);
+  }
+
   render() {
     const {
       username,
@@ -150,6 +158,7 @@ class CodersrankPortfolio extends HTMLElement {
       company,
       skills,
       links,
+      branding,
     } = this;
     const ctx = {
       data,
@@ -161,6 +170,7 @@ class CodersrankPortfolio extends HTMLElement {
       company,
       skills,
       links,
+      branding,
     };
 
     if (!username || !mounted) return;

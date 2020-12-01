@@ -1,3 +1,4 @@
+import { codersrRankLogo } from './codersrank-logo';
 import { logo } from './logo';
 
 export const render = ({
@@ -11,6 +12,7 @@ export const render = ({
   company: showCompany,
   skills: showSkills,
   links: showLinks,
+  branding,
 } = {}) => {
   const formatDate = (date) => {
     if (!date) return '';
@@ -91,6 +93,14 @@ export const render = ({
         </li>
         `).join('')}
       </ul>
+      ${branding ? /* html */`
+      <div class="codersrank-portfolio-branding">
+        <a href="https://codersrank.io" target="_blank" rel="noopener noreferrer">
+          <span>Powered by </span>
+          ${codersrRankLogo}
+        </a>
+      </div>
+      ` : ''}
     </div>
   `;
 };
