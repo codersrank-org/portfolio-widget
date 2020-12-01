@@ -133,6 +133,7 @@ There are following CSS Custom Properties are available:
 | `--link-active-text-decoration` | -                           |
 | `--link-active-border`          | -                           |
 | `--link-active-bg-color`        | -                           |
+| `--branding-text-color`         | `inherit`                   |
 
 For example, to change portfolio title color to `purple` and font-size to `20px`, add this to CSS stylesheet:
 
