@@ -58,6 +58,7 @@ Widget supports following properties as HTML element attributes:
 | `company`     | `boolean` | `true`  | Defines whether to show portfolio item company name or not                                |
 | `skills`      | `boolean` | `true`  | Defines whether to show portfolio skills or not                                           |
 | `links`       | `boolean` | `true`  | Defines whether to show portfolio demo and source links or not                            |
+| `branding`    | `boolean` | `true`  | Displays "Powered by CodersRank" link                                                     |
 
 For example:
 
