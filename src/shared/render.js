@@ -21,10 +21,10 @@ export const render = ({
   };
 
   const dates = (item) => {
-    const startDate = formatDate(item.startDate || item.dateFrom);
-    const endDate = item.currentlyWorkingHere
+    const startDate = formatDate(item.start_date || item.date_from);
+    const endDate = item.is_current
       ? 'Present'
-      : formatDate(item.endDate || item.dateTo);
+      : formatDate(item.end_date || item.date_to);
     return `${startDate} - ${endDate}`;
   };
 
@@ -39,13 +39,13 @@ export const render = ({
         <li class="codersrank-portfolio-item">
           ${showLogos ? /* html */`
           <div class="codersrank-portfolio-logo">
-            ${logo(portfolio.title, portfolio.picture)}
+            ${logo(portfolio.project_title, portfolio.image)}
           </div>
           ` : ''}
           <div class="codersrank-portfolio-content">
-            ${showTitle && portfolio.title ? /* html */`
+            ${showTitle && portfolio.project_title ? /* html */`
             <div class="codersrank-portfolio-title">
-              ${ portfolio.title }
+              ${ portfolio.project_title }
             </div>
             ` : ''}
 
@@ -55,9 +55,9 @@ export const render = ({
             </div>
             ` : ''}
 
-            ${showCompany && portfolio.companyName ? /* html */`
+            ${showCompany && portfolio.company ? /* html */`
             <div class="codersrank-portfolio-company">
-              ${ portfolio.companyName }
+              ${ portfolio.company }
             </div>
             ` : ''}
 
@@ -67,25 +67,25 @@ export const render = ({
             </div>
             ` : ''}
 
-            ${showSkills && (portfolio.highlightedSkills || portfolio.skills) ? /* html */`
+            ${showSkills && (portfolio.highlighted_technologies || portfolio.other_technologies) ? /* html */`
               <div class="codersrank-portfolio-tags">
-                ${(portfolio.highlightedSkills || []).map((tech) => /* html */`
+                ${(portfolio.highlighted_technologies || []).map((tech) => /* html */`
                   <span class="codersrank-portfolio-tag"><span class="codersrank-portfolio-tag-star">★</span>${tech}</span>
                 `).join('')}
 
-                ${(portfolio.skills || []).map((tech) => /* html */`
+                ${(portfolio.other_technologies || []).map((tech) => /* html */`
                   <span class="codersrank-portfolio-tag">${tech}</span>
                 `).join('')}
               </div>
             ` : ''}
 
-            ${showLinks && (portfolio.demoUrl || portfolio.sourceUrl) ? /* html */`
+            ${showLinks && (portfolio.link_to_project || portfolio.link_to_source_code) ? /* html */`
             <div class="codersrank-portfolio-links">
-              ${portfolio.demoUrl ? /* html */`
-              <a href="${portfolio.demoUrl}" target="_blank" rel="noopener noreferrer">Demo</a>
+              ${portfolio.link_to_project ? /* html */`
+              <a href="${portfolio.link_to_project}" target="_blank" rel="noopener noreferrer">Demo</a>
               ` : ''}
-              ${portfolio.sourceUrl ? /* html */`
-              <a href="${portfolio.sourceUrl}" target="_blank" rel="noopener noreferrer">Source</a>
+              ${portfolio.link_to_source_code ? /* html */`
+              <a href="${portfolio.link_to_source_code}" target="_blank" rel="noopener noreferrer">Source</a>
               ` : ''}
             </div>
             ` : ''}
