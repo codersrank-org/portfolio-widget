@@ -1,5 +1,6 @@
-import { codersrRankLogo } from './codersrank-logo';
+import { codersRankLogo } from './codersrank-logo';
 import { logo } from './logo';
+import { sanitizeDescription } from './sanitize-description';
 
 export const render = ({
   data: portfolios,
@@ -63,7 +64,7 @@ export const render = ({
 
             ${showDescription && portfolio.description ? /* html */`
             <div class="codersrank-portfolio-description">
-              ${ portfolio.description }
+              ${ sanitizeDescription(portfolio.description) }
             </div>
             ` : ''}
 
@@ -97,7 +98,7 @@ export const render = ({
       <div class="codersrank-portfolio-branding">
         <a href="https://codersrank.io" target="_blank" rel="noopener noreferrer">
           <span>Powered by </span>
-          ${codersrRankLogo}
+          ${codersRankLogo}
         </a>
       </div>
       ` : ''}
